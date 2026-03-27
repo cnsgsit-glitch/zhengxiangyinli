@@ -151,12 +151,11 @@
                     <h2>潘建瓴（Jack）</h2>
                     <p class="title">正向引力™ 创始人</p>
                     <p>我是<b>正向引力™</b>的创始人，2020年5月20日开启组织顾问生涯，13年阿里铁军背景，B2B销售与企业服务深耕20年。</p>
-                    <p>北京大学组织管理心理学硕士，MIED正念干预认证师资，专注组织发展、团队成长和领导力提升。</p>
-                    <p>我想工作到80岁，帮助创业者从生意人升级为企业家，让组织富有正向生命力，让事业持续健康增长</p>
+                    <p>北京大学组织管理心理学硕士，情绪困扰的正念干预(MIED)认证师资，专注组织发展、团队成长和领导力提升。</p>
+                    <p>我想工作到80岁，帮助更多创业者从生意人升级为企业家，让组织富有正向生命力，让事业持续健康增长。</p>
                     <div class="founder-tags">
                         <span class="founder-tag">真诚开放</span>
                         <span class="founder-tag">热情阳光</span>
-                        <span class="founder-tag">充满活力</span>
                         <span class="founder-tag">持续精进</span>
                     </div>
                 </div>
@@ -188,7 +187,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🧘</div>
-                    <h3>正向职场</h3>
+                    <h3>积极的组织</h3>
                     <p>塑造阳光、高效、可持续的商业组织</p>
                     <div class="service-tags"><span class="service-tag">正念领导力</span><span class="service-tag">组织意义感</span><span class="service-tag">智慧团队</span></div>
                 </div>
@@ -199,7 +198,9 @@
     <section class="team">
         <div class="container">
             <h2 class="section-title">师资团队</h2>
-            <div class="team-grid">
+            <div class="team-wrapper">
+                <div class="team-arrow left" onclick="scrollTeam(-1)"><span>‹</span></div>
+                <div class="team-scroll">
                 <div class="team-card">
                     <div class="team-avatar">
                         <img src="images/avatar.jpg" alt="潘建瓴">
@@ -209,37 +210,50 @@
                     <p>13年阿里铁军，B2B销售与企业服务深耕20年，北京大学组织管理心理学在读硕士</p>
                 </div>
                 <div class="team-card">
-                    <div class="team-avatar">🏢</div>
+                    <div class="team-avatar">
+                        <img src="images/team/teacher2.jpg" alt="亿级直销业务总监">
+                    </div>
                     <h3>亿级直销业务总监</h3>
                     <p class="title">交付师资</p>
-                    <p>来自知名企业，资深直销业务总监，带过百人团队，擅长销售体系搭建与团队业绩提升</p>
+                    <p>来自知名企业，资深业务总监，带过百人团队，擅长销售体系搭建与团队业绩提升</p>
                 </div>
                 <div class="team-card">
-                    <div class="team-avatar">🌍</div>
+                    <div class="team-avatar">
+                        <img src="images/team/teacher3.jpg" alt="世界500强OD专家">
+                    </div>
                     <h3>世界500强OD专家</h3>
                     <p class="title">交付师资</p>
                     <p>世界五百强企业组织发展专家，专注组织设计、人才发展与变革管理</p>
                 </div>
                 <div class="team-card">
-                    <div class="team-avatar">🎓</div>
+                    <div class="team-avatar">
+                        <img src="images/team/teacher4.jpg" alt="北大心理学院导师">
+                    </div>
                     <h3>北大心理学院导师</h3>
                     <p class="title">特聘顾问</p>
                     <p>北京大学心理与认知科学学院硕博导师团队，专注组织行为与领导力研究</p>
                 </div>
+                </div>
+                <div class="team-arrow right" onclick="scrollTeam(1)"><span>›</span></div>
             </div>
+            <script>
+                function scrollTeam(direction) {
+                    document.querySelector('.team-scroll').scrollBy({ left: direction * 300, behavior: 'smooth' });
+                }
+            </script>
         </div>
     </section>
 
     <section class="cases">
         <div class="container">
-            <h2 class="section-title">服务客户</h2>
+            <h2 class="section-title">部分客户案例</h2>
             <div class="cases-grid">
-                <div class="case-card"><span class="case-tag">行业龙头</span><h3>激光设备头部企业</h3><p>帮助建立销售管理体系，实现团队业绩连续3年增长50%，年营收从5亿突破到10亿。</p></div>
-                <div class="case-card"><span class="case-tag">世界500强</span><h3>蒙牛集团</h3><p>为销售团队注入铁军文化，打造高绩效销售团队，提升终端执行力。</p></div>
-                <div class="case-card"><span class="case-tag">上市公司</span><h3>康普顿</h3><p>梳理组织架构，建立业务增长模型，实现区域市场从1亿到3亿的跨越。</p></div>
-                <div class="case-card"><span class="case-tag">行业领先</span><h3>新能源汽车产业链企业</h3><p>构建组织能力体系，解决从游击队到正规军的转型挑战。</p></div>
-                <div class="case-card"><span class="case-tag">国际物流</span><h3>头部物流企业</h3><p>打造铁军销售团队，建立人才梯队，业绩增长200%。</p></div>
-                <div class="case-card"><span class="case-tag">建材出口</span><h3>建材出口集团</h3><p>从0到1搭建销售体系，团队规模从10人发展到100人。</p></div>
+                <div class="case-card"><span class="case-tag">行业标杆</span><h3>激光设备头部企业</h3><p>帮助建立销售管理体系，实现内外贸团队业绩连续增长，年营收规模每年突破新纪录。</p></div>
+                <div class="case-card"><span class="case-tag">世界500强</span><h3>蒙牛低温事业部</h3><p>为HR团队引入“三板斧”工作坊，洞察组织设计深层需求，深度共创年度落地方案。</p></div>
+                <div class="case-card"><span class="case-tag">上市公司</span><h3>康普顿润滑油</h3><p>为销售团队注入铁军文化，打造高绩效销售管理团队，提升腰部执行力。</p></div>
+                <div class="case-card"><span class="case-tag">跨境电商</span><h3>亚马逊品牌大卖家</h3><p>战略规划与拆解，建设高管团队，梳理管理流程，完成从松散部落到高效组织的转型。</p></div>
+                <div class="case-card"><span class="case-tag">国际物流</span><h3>头部物流企业</h3><p>中层管理团队认知、技能、思维系列训练，明确管理职责、带教业务管理、辅导团队建设心法。</p></div>
+                <div class="case-card"><span class="case-tag">外贸服务</span><h3>大型外综服平台</h3><p>全面梳理组织管理系统，为公司从300到1000的规模跃迁做好组织系统支撑。</p></div>
             </div>
         </div>
     </section>
@@ -248,10 +262,10 @@
         <div class="container">
             <h2 class="section-title">合伙人招募</h2>
             <div class="partner-content">
-                <p class="partner-intro">希望由爱的行业出发，和友爱的团队一起，做有爱的事业。<br>欢迎志同道合的进取者，一起为社会创造健康幸福的价值！</p>
+                <p class="partner-intro">希望由爱的行业出发，和友爱的团队一起，做有爱的事业。<br>欢迎志同道合的进取者，一起为社会创造 健康幸福的价值！</p>
                 <div class="partner-requirements">
                     <div class="req-box"><h4>经验要求</h4><ul><li>丰富的实战洞察</li><li>扎实的理论素养</li></ul></div>
-                    <div class="req-box"><h4>能力要求</h4><ul><li>善于倾听</li><li>富有觉察力</li><li>持续自我精进</li></ul></div>
+                    <div class="req-box"><h4>能力要求</h4><ul><li>善于倾听</li><li>富有觉察力</li><li>持续自我升级</li></ul></div>
                     <div class="req-box"><h4>特质要求</h4><ul><li>真诚、谦和、开放</li><li>愿意成就他人</li><li>信奉长期主义</li></ul></div>
                 </div>
                 <div class="partner-benefits">
@@ -276,15 +290,10 @@
                 <div class="contact-item">
                     <h4>📱 微信咨询</h4>
                     <div class="wechat-qr"><img src="images/wechat-qr.jpg" alt="微信二维码"></div>
-                    <p class="wechat-id">jackpan001</p>
-                </div>
-                <div class="contact-item">
-                    <h4>💬 在线留言</h4>
-                    <p>添加微信请备注：顾问</p>
-                    <p style="margin-top: 20px; font-size: 0.9rem;">或直接拨打：186 5318 6301</p>
+                    <p class="wechat-id">长按或扫码</p>
                 </div>
             </div>
-            <p style="margin-top: 60px; opacity: 0.5; font-size: 0.9rem;">© 2026 正向引力｜潘建瓴</p>
+            <p style="margin-top: 60px; opacity: 0.5; font-size: 0.9rem;">© 2026 正向引力</p>
         </div>
     </section>
 </body>
