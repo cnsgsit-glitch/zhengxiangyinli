@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正向引力｜潘建瓴 - 团队成长顾问</title>
+    <meta name="description" content="正向引力 - 帮助企业实现业务增长、组织建设。13年阿里铁军团队成长顾问。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a1a2e;
+            --accent: #e94560;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(233,69,96,0.15) 0%, transparent 70%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .hero h1 span {
+            color: var(--accent);
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .hero .tagline {
+            font-size: 1rem;
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+        
+        .hero .brand {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233,69,96,0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Founder */
+        .founder {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .founder-avatar {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--primary), #2a2a4e);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+        
+        .founder-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .founder-info .title {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .founder-info p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+        
+        .founder-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .founder-tag {
+            background: var(--light);
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+        
+        /* Philosophy */
+        .philosophy {
+            padding: 80px 0;
+            background: var(--light);
+            text-align: center;
+        }
+        
+        .philosophy h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .philosophy p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--primary);
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 30px auto;
+            max-width: 700px;
+            text-align: left;
+        }
+        
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            padding: 35px 28px;
+            border-radius: 16px;
+            background: var(--light);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent), #ff6b6b);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .service-tag {
+            background: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+        
+        /* Partner */
+        .partner {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+        }
+        
+        .partner .section-title {
+            color: white;
+        }
+        
+        .partner .section-title::after {
+            background: var(--accent);
+        }
+        
+        .partner-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .partner-intro {
+            text-align: center;
+            font-size: 1.15rem;
+            opacity: 0.9;
+            margin-bottom: 50px;
+            line-height: 1.8;
+        }
+        
+        .partner-requirements {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        
+        .req-box {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .req-box h4 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .req-box ul {
+            list-style: none;
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        
+        .req-box li {
+            margin-bottom: 8px;
+        }
+        
+        .partner-benefits {
+            background: rgba(255,255,255,0.05);
+            padding: 35px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+        }
+        
+        .partner-benefits h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--accent);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .benefit-item span {
+            font-size: 1.3rem;
+        }
+        
+        .partner-cta {
+            text-align: center;
+        }
+        
+        .partner .btn {
+            background: var(--accent);
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 80px 0;
+            background: white;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact p {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact .wechat {
+            margin-top: 25px;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+        
+        footer {
+            padding: 30px 0;
+            background: #0f0f1a;
+            color: rgba(255,255,255,0.4);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .founder-grid { grid-template-columns: 1fr; }
+            .founder-avatar { max-width: 250px; margin: 0 auto; }
+            .partner-requirements { grid-template-columns: 1fr; }
+            .benefits-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="brand">正向引力™</p>
+                <h1>帮助企业从<span>生意人</span>到<span>创业者</span><br>从<span>管理者</span>到<span>领导者</span></h1>
+                <p class="subtitle">应用心理科学和咨询技术，建设积极的组织</p>
+                <p class="tagline">13年阿里铁军 · 团队成长顾问</p>
+                <a href="#contact" class="btn">立即咨询</a>
+                <a href="#partner" class="btn btn-outline">合伙人招募</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy">
+        <div class="container">
+            <h2>我们相信</h2>
+            <p>好的组织顾问，不是卖报告的人，而是陪客户一起打胜仗的人。</p>
+            <div class="quote">
+                我们卖的不是专业经验。<br>
+                专业经验只是我们工作的基础。<br>
+                我们卖的是<b>严谨的研究</b>和<b>负责的落地</b>。
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder -->
+    <section class="founder">
+        <div class="container">
+            <div class="founder-grid">
+                <div class="founder-avatar">🎯</div>
+                <div class="founder-info">
+                    <h2>潘建瓴（Jack）</h2>
+                    <p class="title">正向引力™ 创始人</p>
+                    <p>我是<b>正向引力™</b>的创始人，13年阿里铁军背景，B2B销售与企业服务深耕20年。</p>
+                    <p>北京大学组织管理心理学方向在读硕士，MIED正念干预认证师资，专注组织发展与团队成长。</p>
+                    <p>我想干到80岁，帮助更多企业从"生意人"变成"创业者"，让组织有生命力，持续增长。</p>
+                    <div class="founder-tags">
+                        <span class="founder-tag">13年阿里铁军</span>
+                        <span class="founder-tag">北大组织管理心理学硕士</span>
+                        <span class="founder-tag">MIED正念干预师资</span>
+                        <span class="founder-tag">20年B2B销售经验</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">核心业务</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>业务增长</h3>
+                    <p>战略澄清、战略解码、业务共创，陪你打穿打透</p>
+                    <div class="service-tags">
+                        <span class="service-tag">增长目标</span>
+                        <span class="service-tag">业务策略</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏃</div>
+                    <h3>管理陪跑</h3>
+                    <p>不是交完方案就走，驻场陪跑、落地有声</p>
+                    <div class="service-tags">
+                        <span class="service-tag">日常陪跑</span>
+                        <span class="service-tag">管理周会/月会</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>组织设计</h3>
+                    <p>让组织架构真正服务于业务战略</p>
+                    <div class="service-tags">
+                        <span class="service-tag">体系搭建</span>
+                        <span class="service-tag">团队辅导</span>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🧘</div>
+                    <h3>正向职场</h3>
+                    <p>打造有生命力、有凝聚力的团队文化</p>
+                    <div class="service-tags">
+                        <span class="service-tag">正念领导力</span>
+                        <span class="service-tag">意义感</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner -->
+    <section class="partner" id="partner">
+        <div class="container">
+            <h2 class="section-title">合伙人招募</h2>
+            <div class="partner-content">
+                <p class="partner-intro">
+                    如果你认同我们的理念，热爱组织发展顾问事业，欢迎加入我们。<br>
+                    一起做点有价值的事。
+                </p>
+                
+                <div class="partner-requirements">
+                    <div class="req-box">
+                        <h4>经验要求</h4>
+                        <ul>
+                            <li>丰富的实战洞察</li>
+                            <li>扎实的理论素养</li>
+                        </ul>
+                    </div>
+                    <div class="req-box">
+                        <h4>能力要求</h4>
+                        <ul>
+                            <li>持续自我进化</li>
+                            <li>沟通能力强</li>
+                            <li>拆解复杂问题</li>
+                        </ul>
+                    </div>
+                    <div class="req-box">
+                        <h4>特质要求</h4>
+                        <ul>
+                            <li>真诚、谦虚、开放</li>
+                            <li>共情能力强</li>
+                            <li>长期主义</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="partner-benefits">
+                    <h3>成为合伙人，你将获得</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <span>💰</span>
+                            <div>共享项目回报，付出与收获成正比</div>
+                        </div>
+                        <div class="benefit-item">
+                            <span>📚</span>
+                            <div>互相督导，共同项目交付中成长</div>
+                        </div>
+                        <div class="benefit-item">
+                            <span>🎯</span>
+                            <div>跟客户一起学习一线企业真实打法</div>
+                        </div>
+                        <div class="benefit-item">
+                            <span>🔬</span>
+                            <div>学习13年阿里铁军的实战心法</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="partner-cta">
+                    <a href="#contact" class="btn">私信交流</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>联系我们</h2>
+            <p>愿与逐梦者同行，做企业组织发展的可靠伙伴</p>
+            <p class="wechat">📱 微信：扫码添加</p>
+            <p style="margin-top: 30px; opacity: 0.5; font-size: 0.9rem;">© 2026 正向引力｜潘建瓴</p>
+        </div>
+    </section>
+</body>
+</html>
