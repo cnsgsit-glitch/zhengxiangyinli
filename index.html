@@ -81,6 +81,15 @@
         .case-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.7; }
         .case-tag { display: inline-block; background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; margin-bottom: 12px; }
         
+        .projects { padding: 100px 0; background: var(--light); }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
+        .project-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+        .project-img { width: 100%; height: 180px; object-fit: cover; background: linear-gradient(135deg, var(--primary), #2a2a4e); }
+        .project-content { padding: 25px; }
+        .project-content h3 { font-size: 1.2rem; margin-bottom: 8px; }
+        .project-content p { color: var(--gray); font-size: 0.9rem; line-height: 1.6; }
+        
         .partner { padding: 100px 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; }
         .partner .section-title { color: white; }
         .partner .section-title::after { background: var(--accent); }
@@ -249,6 +258,57 @@
                 <div class="case-card"><span class="case-tag">跨境电商</span><h3>亚马逊品牌大卖家</h3><p>战略规划与拆解，建设高管团队，梳理管理流程，完成从松散部落到高效组织的转型。</p></div>
                 <div class="case-card"><span class="case-tag">国际物流</span><h3>头部物流企业</h3><p>中层管理团队认知、技能、思维系列训练，明确管理职责、带教业务管理、辅导团队建设心法。</p></div>
                 <div class="case-card"><span class="case-tag">外贸服务</span><h3>大型外综服平台</h3><p>全面梳理组织管理系统，为公司从300到1000的规模跃迁做好组织系统支撑。</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="container">
+            <h2 class="section-title">项目展示</h2>
+            <p style="text-align: center; color: var(--gray); margin-bottom: 40px;">按交付形式分类</p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/projects/workshop.jpg" alt="专题工作坊" class="project-img">
+                    <div class="project-content">
+                        <h3>专题工作坊</h3>
+                        <p>针对特定主题的深度工作坊，如销售铁军、组织设计、正念领导力等，2-3天集中培训。</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/projects/meeting.jpg" alt="管理会议" class="project-img">
+                    <div class="project-content">
+                        <h3>管理会议</h3>
+                        <p>企业年度/季度经营会议、战略规划会、复盘会等，帮助团队对齐目标、凝聚共识。</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/projects/board.jpg" alt="私董会" class="project-img">
+                    <div class="project-content">
+                        <h3>私董会</h3>
+                        <p>企业家私密交流平台，通过圆桌讨论、专家辅导，解决企业成长中的核心问题。</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/projects/summit.jpg" alt="管理峰会" class="project-img">
+                    <div class="project-content">
+                        <h3>管理峰会</h3>
+                        <p>大型行业峰会、企业家论坛，汇聚行业领袖，分享前沿趋势与最佳实践。</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/projects/benchmark.jpg" alt="标杆游学" class="project-img">
+                    <div class="project-content">
+                        <h3>标杆游学</h3>
+                        <p>组织企业参访行业领先企业，学习标杆经验，激发团队创新思维。</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/projects/course.jpg" alt="线下课程" class="project-img">
+                    <div class="project-content">
+                        <h3>线下课程</h3>
+                        <p>系统化培训课程，如《销售心理学》《阿里铁军解析》《职场正念八周之旅》等。</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
