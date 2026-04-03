@@ -1,0 +1,66 @@
+{
+  "providers": {
+    "miaoda": {
+      "baseUrl": "https://innerapi.aiforce.cloud/innerapi/api/v1/sgw/model/proxy",
+      "apiKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIxODg2MDQ5MDU4X2FwcF80anI5NG5tY3Z3MXJxX3ByZXZpZXciLCJleHAiOjE3NzUyNjQyNTIsIm5iZiI6MTc3NTE3Nzg1MiwiaWF0IjoxNzc1MTc3ODUyLCJqdGkiOiJmN2VmNWM0NS00YmIzLWE3MWItMzI1MS1lNzJlZWM1MTA1ZDkiLCJ0ZW5hbnRfaWQiOjE4ODYwNDkwNTgsInVzZXJfaWQiOjE4NTk5ODQ4NzI3NDkyMjcsImFwcF9pZCI6ImFwcF80anI5NG5tY3Z3MXJxIiwiYXBwX2VudiI6InByZXZpZXciLCJhY2Nlc3Nfa2V5IjoiMTg4NjA0OTA1OF9hcHBfNGpyOTRubWN2dzFycV9wcmV2aWV3Iiwic2FuZGJveF9pZCI6IjE4NTk5MzQ1NTM3NjgxMjMifQ.YWJnoFJ92XK4NrkOIfLrnKamvxTYVPEZsXkMcOUnQmU",
+      "api": "openai-completions",
+      "headers": {
+        "x-api-key": "1886049058_app_4jr94nmcvw1rq_preview"
+      },
+      "models": [
+        {
+          "id": "miaoda-model-auto",
+          "name": "妙搭",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "miaoda-auto-multimodal",
+          "name": "妙搭多模态",
+          "reasoning": false,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        },
+        {
+          "id": "miaoda-model-flash",
+          "name": "妙搭 Flash",
+          "reasoning": false,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 200000,
+          "maxTokens": 8192,
+          "api": "openai-completions"
+        }
+      ]
+    }
+  }
+}
