@@ -1,6 +1,6 @@
 {
   "name": "@lark-apaas/openclaw-extension-miaoda",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "妙搭 OpenClaw 插件",
   "type": "module",
   "scripts": {
