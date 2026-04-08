@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>师资团队 - 正向引力</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f5f5;
+    color: #333;
+  }
+
+  /* 通用横向滚动区域 */
+  .scroll-wrapper {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ccc transparent;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  .scroll-wrapper::-webkit-scrollbar { height: 4px; }
+  .scroll-wrapper::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+
+  /* 通用师资卡片 */
+  .member-card {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  /* 普通成员卡片 */
+  .member-card .avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    background: #e0e0e0;
+    transition: transform 0.3s;
+  }
+  .member-card .avatar:hover { transform: scale(1.05); }
+
+  .member-card .name {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+  }
+  .member-card .title {
+    font-size: 13px;
+    color: #888;
+    margin-top: 2px;
+  }
+  .member-card .bio {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  /* 创始人卡片（小一号） */
+  .founder-card .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    background: #e0e0e0;
+    margin: 0 auto;
+    display: block;
+  }
+  .founder-card .name {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+  }
+  .founder-card .title {
+    font-size: 12px;
+    color: #888;
+    margin-top: 2px;
+  }
+  .founder-card .bio {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  /* 分类标题 */
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+    padding-left: 4px;
+    border-left: 4px solid #c8a45a;
+  }
+
+  /* 分类区块 */
+  .category-block {
+    margin-bottom: 48px;
+    padding: 0 20px;
+  }
+
+  .members-row {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    padding-bottom: 12px;
+  }
+
+  /* 箭头按钮 */
+  .scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 36px;
+    text-align: center;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: background 0.2s;
+    user-select: none;
+  }
+  .scroll-btn:hover { background: #fff; }
+  .scroll-btn.prev { left: 0; }
+  .scroll-btn.next { right: 0; }
+
+  .scroll-container {
+    position: relative;
+  }
+
+  /* 滚动提示 */
+  .scroll-hint {
+    display: none;
+    font-size: 12px;
+    color: #aaa;
+    margin-top: 8px;
+    padding-left: 4px;
+  }
+
+  @media (max-width: 768px) {
+    .member-card .avatar { width: 140px; height: 140px; }
+    .founder-card .avatar { width: 100px; height: 100px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== 亿级业务总监 ==================== -->
+<div class="category-block">
+  <h2 class="section-title">亿级业务总监</h2>
+  <div class="scroll-container">
+    <button class="scroll-btn prev" onclick="scrollRow(this, -1)">‹</button>
+    <div class="scroll-wrapper members-row">
+      <div class="member-card">
+        <img src="images/01_房丽.webp" alt="房丽" class="avatar" loading="lazy">
+        <div class="name">房丽</div>
+        <div class="title">亿级业务总监</div>
+        <div class="bio">20年外贸销售管理经验，5年将团队从10人扩至100人，业绩从1000万增至3亿。深度洞察客户心理，擅长外贸团队打造与新人培养。</div>
+      </div>
+      <div class="member-card">
+        <img src="images/02_袁邦阳.webp" alt="袁邦阳" class="avatar" loading="lazy">
+        <div class="name">袁邦阳</div>
+        <div class="title">亿级业务总监</div>
+        <div class="bio">9年阿里铁军经历，原阿里巴巴中供北方区域总经理。15年销售管理经验，沉淀"团队发展六项基本功"方法论，多次帮助企业实现4个月两倍、6个月三倍的业绩增长。</div>
+      </div>
+      <div class="member-card">
+        <img src="images/03_陈治磊.webp" alt="陈治磊" class="avatar" loading="lazy">
+        <div class="name">陈治磊</div>
+        <div class="title">亿级业务总监</div>
+        <div class="bio">10年机械行业外贸经验，足迹遍布五大洲20+国家。3年完成从业务员到总监四级跨越，1年新业务从0到2000万，接手老团队2年从2000万做到1亿。多次荣获销售冠军、总经理特别奖。</div>
+      </div>
+    </div>
+    <button class="scroll-btn next" onclick="scrollRow(this, 1)">›</button>
+  </div>
+  <div class="scroll-hint">← 左右滑动查看更多 →</div>
+</div>
+
+<!-- ==================== 资深组织顾问 ==================== -->
+<div class="category-block">
+  <h2 class="section-title">资深组织顾问</h2>
+  <div class="scroll-container">
+    <button class="scroll-btn prev" onclick="scrollRow(this, -1)">‹</button>
+    <div class="scroll-wrapper members-row">
+      <div class="member-card">
+        <img src="images/04_苗朝辉.webp" alt="苗朝辉" class="avatar" loading="lazy">
+        <div class="name">苗朝辉</div>
+        <div class="title">资深组织顾问</div>
+        <div class="bio">12年阿里铁军经验，曾任区域经理、阿里政委。主导58赶集合并后架构整合及核心管理层整合。多家公司CEO教练，《增长四极》作者。</div>
+      </div>
+      <div class="member-card">
+        <img src="images/05_宋文枫.webp" alt="宋文枫" class="avatar" loading="lazy">
+        <div class="name">宋文枫</div>
+        <div class="title">资深组织顾问</div>
+        <div class="bio">北大应用心理学硕士（组织管理方向）+ 政法大学MBA。深耕企业全盘运营，横跨战略、市场、供应链、基金投资，擅长核心问题抓取及团队规模化运作。</div>
+      </div>
+      <div class="member-card">
+        <img src="images/06_刘仕军.webp" alt="刘仕军" class="avatar" loading="lazy">
+        <div class="name">刘仕军</div>
+        <div class="title">资深组织顾问</div>
+        <div class="bio">北大应用心理学硕士（组织管理方向）+ 北理工管理学学士。20年500强企业前后端管理经验，横跨营销、产品、供应链、战略运营及人力资源，对战略制定与落地有深刻洞察。</div>
+      </div>
+    </div>
+    <button class="scroll-btn next" onclick="scrollRow(this, 1)">›</button>
+  </div>
+  <div class="scroll-hint">← 左右滑动查看更多 →</div>
+</div>
+
+<!-- ==================== 正念入企师资 ==================== -->
+<div class="category-block">
+  <h2 class="section-title">正念入企师资</h2>
+  <div class="scroll-container">
+    <button class="scroll-btn prev" onclick="scrollRow(this, -1)">‹</button>
+    <div class="scroll-wrapper members-row">
+      <div class="member-card">
+        <img src="images/07_杨泽云.webp" alt="杨泽云" class="avatar" loading="lazy">
+        <div class="name">杨泽云</div>
+        <div class="title">正念入企师资</div>
+        <div class="bio">清华大学心理学博士，注册系统心理师，国家二级心理咨询师。MIED（情绪困扰正念干预）认证师资及督导师，多篇论文发表于国内外期刊。</div>
+      </div>
+      <div class="member-card">
+        <img src="images/08_郭欣然.webp" alt="郭欣然" class="avatar" loading="lazy">
+        <div class="name">郭欣然</div>
+        <div class="title">正念入企师资</div>
+        <div class="bio">北大心理与认知科学学院硕士（应用心理学临床方向）。注册心理师，MIED认证师资，1500+小时咨询经验，2000+小时危机干预热线经验。</div>
+      </div>
+      <div class="member-card">
+        <img src="images/09_黄阳.webp" alt="黄阳" class="avatar" loading="lazy">
+        <div class="name">黄阳</div>
+        <div class="title">正念入企师资</div>
+        <div class="bio">清华大学应用心理学硕士，MIED（情绪困扰正念干预）认证师资，持续接受系统式咨询训练，专注正念与职场心理健康融合。</div>
+      </div>
+      <div class="member-card">
+        <img src="images/10_边然.webp" alt="边然" class="avatar" loading="lazy">
+        <div class="name">边然</div>
+        <div class="title">正念入企师资</div>
+        <div class="bio">北大心理与认知科学学院硕士（应用心理学临床方向）+ 北外英语系硕博。前海淀六小强高中英语老师，MIED认证师资，融合心理学科研与教学实践。</div>
+      </div>
+      <div class="member-card">
+        <img src="images/11_彭婷.webp" alt="彭婷" class="avatar" loading="lazy">
+        <div class="name">彭婷</div>
+        <div class="title">正念入企师资</div>
+        <div class="bio">北大应用心理硕士，大厂金牌讲师与项目负责人。历任线下分校校长、网校校长。MIED认证师资，"聆听心"正念中心发起人，擅将科学心理学与正念训练结合。</div>
+      </div>
+      <div class="member-card">
+        <img src="images/12_刘晨馨.webp" alt="刘晨馨" class="avatar" loading="lazy">
+        <div class="name">刘晨馨</div>
+        <div class="title">正念入企师资</div>
+        <div class="bio">北大应用心理硕士（老年心理学方向），"聆听心"正念中心发起人，专注正念干预在组织健康与个体发展中的应用与推广。</div>
+      </div>
+    </div>
+    <button class="scroll-btn next" onclick="scrollRow(this, 1)">›</button>
+  </div>
+  <div class="scroll-hint">← 左右滑动查看更多 →</div>
+</div>
+
+<!-- ==================== 组织研究导师 ==================== -->
+<div class="category-block">
+  <h2 class="section-title">组织研究导师</h2>
+  <div class="scroll-container">
+    <button class="scroll-btn prev" onclick="scrollRow(this, -1)">‹</button>
+    <div class="scroll-wrapper members-row">
+      <div class="member-card">
+        <img src="images/placeholder.png" alt="张燕" class="avatar" loading="lazy" style="background:#e8e8e8">
+        <div class="name">张燕</div>
+        <div class="title">组织研究导师</div>
+        <div class="bio">北大心理与认知科学院长聘副教授、博士生导师。北大光华管理学院组织管理博士，美国ASU、Boston College访问学者。专注组织中的领导力、创造力与跨文化差异研究。</div>
+      </div>
+      <div class="member-card">
+        <img src="images/placeholder.png" alt="刘蓉晖" class="avatar" loading="lazy" style="background:#e8e8e8">
+        <div class="name">刘蓉晖</div>
+        <div class="title">组织研究导师</div>
+        <div class="bio">中科院大学应用心理学副教授。北大心理学系硕博，美国罗彻斯特大学医学中心博士后。中国心理学会注册督导师，正念专业委员会副主任委员，专注正念研究与教学推广。</div>
+      </div>
+    </div>
+    <button class="scroll-btn next" onclick="scrollRow(this, 1)">›</button>
+  </div>
+  <div class="scroll-hint">← 左右滑动查看更多 →</div>
+</div>
+
+<!-- ==================== 创始人 ==================== -->
+<div class="category-block">
+  <h2 class="section-title">创始人</h2>
+  <div class="scroll-container">
+    <button class="scroll-btn prev" onclick="scrollRow(this, -1)">‹</button>
+    <div class="scroll-wrapper members-row">
+      <div class="member-card founder-card">
+        <!-- 创始人照片占位，120px 头像（小一号） -->
+        <img src="images/placeholder.png" alt="潘建瓴" class="avatar" loading="lazy" style="background:#e8e8e8">
+        <div class="name">潘建瓴</div>
+        <div class="title">正向引力创始人</div>
+        <div class="bio">13年阿里铁军（销冠/讲师/伯乐），北大组织管理心理学硕士，MIED认证师资。20年B2B销售经验，服务1000+企业。专注业务增长、管理赋能、组织设计与正念职场。</div>
+      </div>
+    </div>
+    <button class="scroll-btn next" onclick="scrollRow(this, 1)">›</button>
+  </div>
+</div>
+
+<script>
+  function scrollRow(btn, dir) {
+    const row = btn.parentElement.querySelector('.scroll-wrapper');
+    const cardWidth = 220;
+    row.scrollBy({ left: cardWidth * dir * 2, behavior: 'smooth' });
+  }
+
+  // 移动端显示滑动提示
+  if (window.innerWidth <= 768) {
+    document.querySelectorAll('.scroll-hint').forEach(el => el.style.display = 'block');
+  }
+</script>
+
+</body>
+</html>
