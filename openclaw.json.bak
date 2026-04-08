@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.8",
-    "lastTouchedAt": "2026-04-03T06:30:13.450Z"
+    "lastTouchedAt": "2026-04-03T08:44:53.952Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-05T11:15:21.053Z",
@@ -419,8 +419,8 @@
         "resolvedSpec": "@lark-apaas/openclaw-extension-miaoda@1.0.4",
         "integrity": "sha512-FuvMO7y1PtWCGy5r/UtDL1+oUCqg/b5YRoGNDGQ33gMThhuqgeox87579hB0Evih5LHaaadJk2NjZNBWT60Ong==",
         "shasum": "96a1718f0250326431fec033f219c76987b59229",
-        "resolvedAt": "2026-04-03T06:30:13.410Z",
-        "installedAt": "2026-04-03T06:30:13.438Z"
+        "resolvedAt": "2026-04-03T08:44:53.913Z",
+        "installedAt": "2026-04-03T08:44:53.941Z"
       }
     }
   }

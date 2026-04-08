@@ -8,7 +8,7 @@
       "name": "创业者意义感文献更新",
       "enabled": true,
       "createdAtMs": 1774061257067,
-      "updatedAtMs": 1774061257067,
+      "updatedAtMs": 1775270993594,
       "schedule": {
         "everyMs": 1209600000,
         "kind": "every",
@@ -25,7 +25,13 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1775270857067
+        "nextRunAtMs": 1776480457073,
+        "lastRunAtMs": 1775270857073,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 136521,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
       }
     }
   ]
