@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.8",
-    "lastTouchedAt": "2026-04-03T08:44:59.181Z"
+    "lastTouchedAt": "2026-04-08T18:03:20.495Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-05T11:15:21.053Z",
@@ -412,15 +412,15 @@
       "openclaw-extension-miaoda": {
         "source": "npm",
         "spec": "@lark-apaas/openclaw-extension-miaoda",
-        "installPath": "./extensions/openclaw-extension-miaoda",
-        "version": "1.0.4",
+        "installPath": "/home/gem/workspace/agent/extensions/openclaw-extension-miaoda",
+        "version": "1.0.7",
         "resolvedName": "@lark-apaas/openclaw-extension-miaoda",
-        "resolvedVersion": "1.0.4",
-        "resolvedSpec": "@lark-apaas/openclaw-extension-miaoda@1.0.4",
-        "integrity": "sha512-FuvMO7y1PtWCGy5r/UtDL1+oUCqg/b5YRoGNDGQ33gMThhuqgeox87579hB0Evih5LHaaadJk2NjZNBWT60Ong==",
-        "shasum": "96a1718f0250326431fec033f219c76987b59229",
-        "resolvedAt": "2026-04-03T08:44:53.913Z",
-        "installedAt": "2026-04-03T08:44:53.941Z"
+        "resolvedVersion": "1.0.7",
+        "resolvedSpec": "@lark-apaas/openclaw-extension-miaoda@1.0.7",
+        "integrity": "sha512-2aYcLVG4XXBZ/u6RWWJtrLPxoecAJ+B2NuK+vHDDXDofkbqit1kykIWUGPGKKBdoV0HUkRY3AA47UHTSYxQGJA==",
+        "shasum": "0eb1048fd67501832163e4f85b57b445440c218c",
+        "resolvedAt": "2026-04-08T18:03:12.683Z",
+        "installedAt": "2026-04-08T18:03:12.711Z"
       }
     }
   }
