@@ -1,7 +1,7 @@
 {
   "meta": {
     "lastTouchedVersion": "2026.3.8",
-    "lastTouchedAt": "2026-04-09T17:12:47.469Z"
+    "lastTouchedAt": "2026-04-09T17:12:56.183Z"
   },
   "wizard": {
     "lastRunAt": "2026-03-05T11:15:21.053Z",
@@ -374,7 +374,8 @@
   "plugins": {
     "allow": [
       "openclaw-lark",
-      "openclaw-extension-miaoda"
+      "openclaw-extension-miaoda",
+      "openclaw-extension-miaoda-coding"
     ],
     "entries": {
       "feishu": {
