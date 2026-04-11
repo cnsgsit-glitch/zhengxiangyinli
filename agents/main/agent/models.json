@@ -2,10 +2,10 @@
   "providers": {
     "miaoda": {
       "baseUrl": "https://innerapi.aiforce.cloud/innerapi/api/v1/sgw/model/proxy",
-      "apiKey": "secretref-managed",
+      "apiKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiIxODg2MDQ5MDU4X2FwcF80anI5NG5tY3Z3MXJxX3ByZXZpZXciLCJleHAiOjE3NzYxNDY3MjYsIm5iZiI6MTc3NTg4NzUyNiwiaWF0IjoxNzc1ODg3NTI2LCJqdGkiOiIxMDlmOGMyYS0yNDJlLTgzNTQtNmYzYy04YTk3NGJkNTRkMmEiLCJ0ZW5hbnRfaWQiOjE4ODYwNDkwNTgsInVzZXJfaWQiOjE4NTk5ODQ4NzI3NDkyMjcsImFwcF9pZCI6ImFwcF80anI5NG5tY3Z3MXJxIiwiYXBwX2VudiI6InByZXZpZXciLCJhY2Nlc3Nfa2V5IjoiMTg4NjA0OTA1OF9hcHBfNGpyOTRubWN2dzFycV9wcmV2aWV3Iiwic2FuZGJveF9pZCI6IjE4NTk5MzQ1NTM3NjgxMjMifQ.Y4af2zK1h0hvtIVAQhzDhIWDXP88dSje0VWjCROEng4",
       "api": "openai-completions",
       "headers": {
-        "x-api-key": "secretref-managed"
+        "x-api-key": "1886049058_app_4jr94nmcvw1rq_preview"
       },
       "models": [
         {

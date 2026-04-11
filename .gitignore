@@ -79,3 +79,6 @@ browser/openclaw/user-data/
 
 logs
 log
+
+# Sessions
+workspace/agents/main/sessions/
