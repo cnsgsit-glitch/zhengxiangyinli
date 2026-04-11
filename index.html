@@ -85,9 +85,9 @@
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
         .project-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: all 0.3s ease; }
         .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
-        .project-img { width: 100%; height: 200px; object-fit: contain; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 8px; margin-bottom: 10px; }
+        .project-img { width: 100%; height: 200px; object-fit: cover; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 8px; margin-bottom: 10px; }
         .project-content { padding: 15px 20px; }
-        .project-content h3 { font-size: 1.2rem; margin-bottom: 8px; white-space: normal; overflow: visible; }
+        .project-content h3 { font-size: 1.2rem; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .project-content p { color: var(--gray); font-size: 0.9rem; line-height: 1.6; }
         
         .partner { padding: 100px 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; }
@@ -126,6 +126,12 @@
             .partner-requirements { grid-template-columns: 1fr; }
             .benefits-grid { grid-template-columns: 1fr; }
             .contact-wrapper { gap: 40px; }
+            .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+            .project-card { display: flex; flex-direction: row; align-items: center; padding: 15px; }
+            .project-img { width: 100px; height: 80px; flex-shrink: 0; margin-bottom: 0; margin-right: 15px; border-radius: 8px; }
+            .project-content { padding: 0; flex: 1; min-width: 0; }
+            .project-content h3 { font-size: 1rem; white-space: normal; overflow: visible; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-clamp: 2; margin-bottom: 5px; }
+            .project-content p { font-size: 0.8rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-clamp: 2; overflow: hidden; }
         }
     </style>
 </head>
@@ -212,38 +218,114 @@
     <section class="team">
         <div class="container">
             <h2 class="section-title">师资团队</h2>
-            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 50px;">
-                <div class="service-card" style="text-align: center; padding: 40px 25px;">
-                    <div class="team-avatar" style="width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 20px; overflow: hidden;">
-                        <img src="images/team/sales1.jpg" alt="亿级B2B业务总监" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">亿级B2B业务总监</h3>
-                    <p style="color: var(--accent); font-size: 0.85rem; margin-bottom: 12px;">4位交付师资</p>
-                    <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">来自大型化工外贸、头部激光设备、著名IT公司、互联网大厂，擅长销售体系建设与业绩增长</p>
+
+            <!-- 亿级业务总监 -->
+            <h3 style="font-size: 1.1rem; margin-bottom: 16px; padding-left: 4px; border-left: 3px solid var(--accent); color: var(--primary);">亿级业务总监</h3>
+            <div class="team-wrapper">
+                <div class="team-arrow left" onclick="scrollTeam(this, -1)"><span>‹</span></div>
+                <div class="team-scroll">
+                    <a href="team/房丽.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/01_房丽.webp" alt="房丽" loading="lazy"></div>
+                            <h3>房丽</h3><p style="font-size:0.75rem;color:#999;margin-bottom:4px;">点击查看详细介绍 ›</p><p>20年外贸销售管理经验，5年将团队从10人扩至100人，业绩从1000万增至3亿。深度洞察客户心理，擅长外贸团队打造与新人培养。</p>
+                        </div>
+                    </a><a href="team/袁邦阳.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/02_袁邦阳.webp" alt="袁邦阳" loading="lazy"></div>
+                            <h3>袁邦阳</h3><p>9年阿里铁军，原中供北方区域总经理。15年销售管理经验，沉淀"团队发展六项基本功"方法论，帮助企业实现4个月两倍、6个月三倍业绩增长。</p>
+                        </div>
+                    </a><a href="team/陈治磊.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/03_陈治磊.webp" alt="陈治磊" loading="lazy"></div>
+                            <h3>陈治磊</h3><p>10年机械行业外贸经验，足迹遍布五大洲20+国家。3年完成从业务员到总监四级跨越，多次荣获销售冠军、总经理特别奖。</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="service-card" style="text-align: center; padding: 40px 25px;">
-                    <div class="team-avatar" style="width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 20px; overflow: hidden;">
-                        <img src="images/team/od1.jpg" alt="世界500强OD专家" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">世界500强OD专家</h3>
-                    <p style="color: var(--accent); font-size: 0.85rem; margin-bottom: 12px;">3位交付师资</p>
-                    <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">来自IT企业、世界500强、著名互联网平台，专注组织设计与人才发展</p>
+                <div class="team-arrow right" onclick="scrollTeam(this, 1)"><span>›</span></div>
+            </div>
+
+            <!-- 资深组织顾问 -->
+            <h3 style="font-size: 1.1rem; margin: 40px 0 16px; padding-left: 4px; border-left: 3px solid var(--accent); color: var(--primary);">资深组织顾问</h3>
+            <div class="team-wrapper">
+                <div class="team-arrow left" onclick="scrollTeam(this, -1)"><span>‹</span></div>
+                <div class="team-scroll">
+                    <a href="team/苗朝辉.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/04_苗朝辉.webp" alt="苗朝辉" loading="lazy"></div>
+                            <h3>苗朝辉</h3><p>12年阿里铁军经验，曾任区域经理、阿里政委。主导58赶集合并后架构整合，多家公司CEO教练，《增长四极》作者。</p>
+                        </div>
+                    </a><a href="team/宋文枫.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/05_宋文枫.webp" alt="宋文枫" loading="lazy"></div>
+                            <h3>宋文枫</h3><p>北大应用心理学硕士+中国政法MBA。深耕企业全盘运营，横跨战略、市场、供应链、基金投资，擅长核心问题抓取及团队规模化运作。</p>
+                        </div>
+                    </a><a href="team/刘仕军.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/06_刘仕军.webp" alt="刘仕军" loading="lazy"></div>
+                            <h3>刘仕军</h3><p>北大应用心理学硕士+北理工管理学学士。20年500强企业前后端管理经验，横跨营销、产品、供应链、战略运营及人力资源。</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="service-card" style="text-align: center; padding: 40px 25px;">
-                    <div class="team-avatar" style="width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 20px; overflow: hidden;">
-                        <img src="images/team/teacher1.jpg" alt="北大心理学院导师" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">北大心理学院导师</h3>
-                    <p style="color: var(--accent); font-size: 0.85rem; margin-bottom: 12px;">5位特聘顾问</p>
-                    <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">北大心理与认知科学学院硕博导师团队，涵盖领导力与创造力、自我探索与发展、AI与组织效能、消费心理学与组织测评、职业生涯规划与健康、正念干预等研究领域</p>
+                <div class="team-arrow right" onclick="scrollTeam(this, 1)"><span>›</span></div>
+            </div>
+
+            <!-- 正念入企师资 -->
+            <h3 style="font-size: 1.1rem; margin: 40px 0 16px; padding-left: 4px; border-left: 3px solid var(--accent); color: var(--primary);">正念入企师资</h3>
+            <div class="team-wrapper">
+                <div class="team-arrow left" onclick="scrollTeam(this, -1)"><span>‹</span></div>
+                <div class="team-scroll">
+                    <a href="team/杨泽云.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/杨泽云.webp" alt="杨泽云" loading="lazy"></div>
+                            <h3>杨泽云</h3><p>清华大学心理学博士，注册系统心理师，MIED认证师资及督导师，多篇论文发表于国内外期刊。</p>
+                        </div>
+                    </a><a href="team/郭欣然.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/08_郭欣然.webp" alt="郭欣然" loading="lazy"></div>
+                            <h3>郭欣然</h3><p>北大心理与认知科学学院硕士，注册心理师，MIED认证师资，1500+小时咨询经验，2000+小时危机干预热线经验。</p>
+                        </div>
+                    </a><a href="team/彭婷.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/11_彭婷.webp" alt="彭婷" loading="lazy"></div>
+                            <h3>彭婷</h3><p>北大应用心理硕士，大厂金牌讲师。历任分校校长、网校校长，MIED认证师资，"聆听心"正念中心发起人。</p>
+                        </div>
+                    </a><a href="team/黄阳.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/09_黄阳.webp" alt="黄阳" loading="lazy"></div>
+                            <h3>黄阳</h3><p>清华大学应用心理学硕士，MIED认证师资，专注正念与职场心理健康融合。</p>
+                        </div>
+                    </a><a href="team/边然.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/10_边然.webp" alt="边然" loading="lazy"></div>
+                            <h3>边然</h3><p>北大心理与认知科学学院硕士+北外英语系硕博。前海淀六小强高中英语老师，MIED认证师资。</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="service-card" style="text-align: center; padding: 40px 25px;">
-                    <div class="team-avatar" style="width: 110px; height: 110px; border-radius: 50%; margin: 0 auto 20px; overflow: hidden;">
-                        <img src="images/team/mindfulness1.jpg" alt="正念带领师资" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <h3 style="font-size: 1.2rem; margin-bottom: 8px;">正念带领师资</h3>
-                    <p style="color: var(--accent); font-size: 0.85rem; margin-bottom: 12px;">5位带领师资</p>
-                    <p style="color: var(--gray); font-size: 0.85rem; line-height: 1.6;">来自北大、清华、港大、中山大学，可交付正念入企项目,通过正念八周之旅、职场正念工作坊等方式，帮助提升领导力情商、释放团队创造力、缓解组织成员情绪困扰、减少工作压力、塑造幸福职场。</p>
+                <div class="team-arrow right" onclick="scrollTeam(this, 1)"><span>›</span></div>
+            </div>
+
+            <!-- 组织研究导师 -->
+            <h3 style="font-size: 1.1rem; margin: 40px 0 16px; padding-left: 4px; border-left: 3px solid var(--accent); color: var(--primary);">组织研究导师</h3>
+            <div class="team-wrapper">
+                <div class="team-arrow left" onclick="scrollTeam(this, -1)"><span>‹</span></div>
+                <div class="team-scroll">
+                    <a href="team/张燕.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/张燕.webp" alt="张燕" loading="lazy"></div>
+                            <h3>张燕</h3><p>北大心理与认知科学院长聘副教授、博士生导师。专注组织中的领导力、创造力与跨文化差异研究。</p>
+                        </div>
+                    </a><a href="team/刘蓉晖.html" style="text-decoration:none;color:inherit;">
+                        <div class="team-card">
+                            <div class="team-avatar"><img src="images/team/刘蓉晖.webp" alt="刘蓉晖" loading="lazy"></div>
+                            <h3>刘蓉晖</h3><p>中科院大学应用心理学副教授。中国心理学会注册督导师，正念专业委员会副主任委员，专注正念研究与教学推广。</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="team-arrow right" onclick="scrollTeam(this, 1)"><span>›</span></div>
+            </div>
+
+        </div>
+    </section>
                 </div>
             </div>
         </div>
@@ -274,16 +356,16 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/projects/course.jpg" alt="线下课程" class="project-img">
+                    <img src="images/projects/course.jpg" alt="设计梦想团队" class="project-img">
                     <div class="project-content">
-                        <h3>线下课程</h3>
+                        <h3>设计梦想团队</h3>
                         <p>系统化培训课程，如《管理者的职责》《业务循环的管理》《创造力心理学》《销售心理学》《阿里铁军解析》等，入企定制或集中大课。</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <img src="images/projects/forum.jpg" alt="管理论坛" class="project-img">
+                    <img src="images/projects/forum.jpg" alt="季度管理复盘" class="project-img">
                     <div class="project-content">
-                        <h3>管理论坛</h3>
+                        <h3>季度管理复盘</h3>
                         <p>多家企业老板、高管针对如何进行年度规划、如何季度复盘、人才梯队的搭建、组织系统的设计等话题进行深度共创、嘉宾分享。</p>
                     </div>
                 </div>
@@ -341,5 +423,13 @@
             <p style="margin-top: 60px; opacity: 0.5; font-size: 0.9rem;">© 2026 正向引力</p>
         </div>
     </section>
+        <script>
+        function scrollTeam(btn, dir) {
+            const wrapper = btn.parentElement;
+            const scroll = wrapper.querySelector(".team-scroll");
+            const cardWidth = 340;
+            scroll.scrollBy({ left: cardWidth * dir * 2, behavior: "smooth" });
+        }
+        </script>
 </body>
 </html>
