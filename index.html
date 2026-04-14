@@ -90,6 +90,16 @@
         .project-content h3 { font-size: 1.2rem; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .project-content p { color: var(--gray); font-size: 0.9rem; line-height: 1.6; }
         
+        /* 项目展示新样式 */
+        .project-category { margin-bottom: 60px; }
+        .project-category-title { font-size: 1.5rem; color: var(--primary); margin-bottom: 10px; padding-left: 12px; border-left: 4px solid var(--accent); }
+        .project-category-desc { color: var(--gray); font-size: 0.95rem; margin-bottom: 20px; padding-left: 16px; }
+        .project-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+        .project-gallery-item { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+        .project-gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .project-gallery-item img { width: 100%; height: 150px; object-fit: cover; display: block; }
+        .project-gallery-label { display: block; padding: 12px; text-align: center; font-size: 0.85rem; color: var(--primary); background: #f8f9fa; border-top: 1px solid #e9ecef; }
+        
         .partner { padding: 100px 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; }
         .partner .section-title { color: white; }
         .partner .section-title::after { background: var(--accent); }
@@ -132,6 +142,10 @@
             .project-content { padding: 0; flex: 1; min-width: 0; }
             .project-content h3 { font-size: 1rem; white-space: normal; overflow: visible; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-clamp: 2; margin-bottom: 5px; }
             .project-content p { font-size: 0.8rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-clamp: 2; overflow: hidden; }
+            .project-gallery { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .project-gallery-item img { height: 120px; }
+            .project-gallery-label { padding: 8px; font-size: 0.75rem; }
+            .project-category-title { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -347,33 +361,139 @@
     <section class="projects">
         <div class="container">
             <h2 class="section-title">项目展示</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="images/projects/workshop.jpg" alt="专题工作坊" class="project-img">
-                    <div class="project-content">
-                        <h3>专题工作坊</h3>
-                        <p>针对特定主题的深度工作坊，如战略共创会、设计梦想团队、年度季度管理复盘、正念练习讲座等，根据客户需要进行专项设计。</p>
+            
+            <!-- 专题工作坊 -->
+            <div class="project-category">
+                <h3 class="project-category-title">专题工作坊</h3>
+                <p class="project-category-desc">针对特定主题的深度工作坊，如战略共创会、设计梦想团队、年度季度管理复盘、正念练习讲座等，根据客户需要进行专项设计。</p>
+                <div class="project-gallery">
+                    <div class="project-gallery-item">
+                        <img src="images/cases/专题工作坊-三板斧工作坊.jpg" alt="三板斧工作坊">
+                        <span class="project-gallery-label">三板斧工作坊</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/专题工作坊-关键战高管共创会.png" alt="关键战高管共创会">
+                        <span class="project-gallery-label">关键战高管共创会</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/专题工作坊-半年启动会议.png" alt="半年启动会议">
+                        <span class="project-gallery-label">半年启动会议</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/专题工作坊-年度业务策略共创会.jpg" alt="年度业务策略共创会">
+                        <span class="project-gallery-label">年度业务策略共创会</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/专题工作坊-正念讲座与练习.jpg" alt="正念讲座与练习">
+                        <span class="project-gallery-label">正念讲座与练习</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/专题工作坊-设计们梦想团队1.jpg" alt="设计梦想团队">
+                        <span class="project-gallery-label">设计梦想团队</span>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="images/projects/course.jpg" alt="线下课程" class="project-img">
-                    <div class="project-content">
-                        <h3>线下课程</h3>
-                        <p>系统化培训课程，如《管理者的职责》《业务循环的管理》《创造力心理学》《销售心理学》《阿里铁军解析》等，入企定制或集中大课。</p>
+            </div>
+            
+            <!-- 管理论坛 -->
+            <div class="project-category">
+                <h3 class="project-category-title">管理论坛</h3>
+                <p class="project-category-desc">多家企业老板、高管针对如何进行年度规划、如何季度复盘、人才梯队的搭建、组织系统的设计等话题进行深度共创、嘉宾分享。</p>
+                <div class="project-gallery">
+                    <div class="project-gallery-item">
+                        <img src="images/cases/管理论坛-主题共创沙龙.jpg" alt="主题共创沙龙">
+                        <span class="project-gallery-label">主题共创沙龙</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/管理论坛-人才培养心法.jpg" alt="人才培养心法">
+                        <span class="project-gallery-label">人才培养心法</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/管理论坛-如何做年度规划.jpg" alt="如何做年度规划">
+                        <span class="project-gallery-label">如何做年度规划</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/管理论坛《如何做年度复盘》.jpg" alt="如何做年度复盘">
+                        <span class="project-gallery-label">如何做年度复盘</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/管理论坛《搭建人才梯队》.jpg" alt="搭建人才梯队">
+                        <span class="project-gallery-label">搭建人才梯队</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/管理论坛《系统增长的基本逻辑》.jpg" alt="系统增长的基本逻辑">
+                        <span class="project-gallery-label">系统增长的基本逻辑</span>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="images/projects/forum.jpg" alt="管理论坛" class="project-img">
-                    <div class="project-content">
-                        <h3>管理论坛</h3>
-                        <p>多家企业老板、高管针对如何进行年度规划、如何季度复盘、人才梯队的搭建、组织系统的设计等话题进行深度共创、嘉宾分享。</p>
+            </div>
+            
+            <!-- 线下课程 -->
+            <div class="project-category">
+                <h3 class="project-category-title">线下课程</h3>
+                <p class="project-category-desc">系统化培训课程，如《管理者的职责》《业务循环的管理》《创造力心理学》《销售心理学》《阿里铁军解析》等，入企定制或集中大课。</p>
+                <div class="project-gallery">
+                    <div class="project-gallery-item">
+                        <img src="images/cases/线下课程-《战地心理空间》.jpg" alt="战地心理空间">
+                        <span class="project-gallery-label">战地心理空间</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/线下课程-创造力心理学（华工）.png" alt="创造力心理学（华工）">
+                        <span class="project-gallery-label">创造力心理学（华工）</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/线下课程《业务循环的管理》.jpg" alt="业务循环的管理">
+                        <span class="project-gallery-label">业务循环的管理</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/线下课程《管理者职责与认知》.jpg" alt="管理者职责与认知">
+                        <span class="project-gallery-label">管理者职责与认知</span>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="images/projects/board.jpg" alt="私董会" class="project-img">
-                    <div class="project-content">
-                        <h3>私董会</h3>
-                        <p>企业家私密交流平台，通过圆桌讨论、专家辅导、标杆游学，解决企业成长中的核心问题。</p>
+            </div>
+            
+            <!-- 私董会 -->
+            <div class="project-category">
+                <h3 class="project-category-title">私董会</h3>
+                <p class="project-category-desc">企业家私密交流平台，通过圆桌讨论、专家辅导、标杆游学，解决企业成长中的核心问题。</p>
+                <div class="project-gallery">
+                    <div class="project-gallery-item">
+                        <img src="images/cases/私董会-文化落地.jpg" alt="文化落地">
+                        <span class="project-gallery-label">文化落地</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/私董会-标杆游学.jpg" alt="标杆游学">
+                        <span class="project-gallery-label">标杆游学</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/私董会《组织中的心理学》.jpg" alt="组织中的心理学">
+                        <span class="project-gallery-label">组织中的心理学</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/私董会-西柳社.jpg" alt="西柳社">
+                        <span class="project-gallery-label">西柳社</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 设计梦想团队 -->
+            <div class="project-category">
+                <h3 class="project-category-title">设计梦想团队</h3>
+                <p class="project-category-desc">帮助企业打造高绩效团队，从团队文化、目标设定、协作机制等多维度进行系统化设计。</p>
+                <div class="project-gallery">
+                    <div class="project-gallery-item">
+                        <img src="images/cases/专题工作坊-设计们梦想团队1.jpg" alt="设计梦想团队">
+                        <span class="project-gallery-label">设计梦想团队</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/专题工作坊-设计们梦想团队2.jpg" alt="设计梦想团队">
+                        <span class="project-gallery-label">设计梦想团队</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/专题工作坊-设计梦想团4.jpg" alt="设计梦想团队">
+                        <span class="project-gallery-label">设计梦想团队</span>
+                    </div>
+                    <div class="project-gallery-item">
+                        <img src="images/cases/设计梦想团队5.jpg" alt="设计梦想团队">
+                        <span class="project-gallery-label">设计梦想团队</span>
                     </div>
                 </div>
             </div>
